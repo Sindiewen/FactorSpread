@@ -6,7 +6,21 @@ int main()
 	FactorSpread myField;
 
 	// print the graph
+	std::cout << "Before: " << std::endl;
 	myField.print_field();
+
+	// Try factor spread
+	std::cout << "After: " << std::endl;
+	myField.spread(2, 2);
+	myField.print_field();
+
+	myField.spread(2, 5);
+	myField.print_field();
+
+	myField.spread(1, 2);
+	myField.print_field();
+
+
 
 	return 0;
 }

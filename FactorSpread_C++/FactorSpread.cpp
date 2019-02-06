@@ -88,9 +88,23 @@ bool FactorSpread::still_playing() {
 *       7 81 XX XX  3
 *      39 14 XX 11 77
 */
-void FactorSpread::spread(int j, int factor) {
+void FactorSpread::spread(int j, int factor) 
+{
 	/* Replace the semi colon with your code */
-	;
+
+	// for J, were doing indexes starting at 0, So
+	// if j = 2, then we are at index 2
+
+	// Getting the size of the 2d array at index j that we passed in
+	// and then navigating that column to the bottom factoring the numbers
+	for (int i = 0; i < field.size(); i++)
+	{
+		if (field[i][j] % factor == 0)
+		{
+			field[i][j] = 0;
+		}
+	}
+
 }
 
 /**
@@ -116,8 +130,12 @@ void FactorSpread::print_field() {
 	{
 		for (int j = 0; j < curCols; j++)
 		{
+			if(field[i][j] == 0)
+			{
+				std::cout << "xx ";
+			}
 			// If a single digis exists
-			if (field[i][j] / 10 == 0)
+			else if (field[i][j] / 10 == 0)
 			{
 				// print space before number
 				std::cout << " " << field[i][j] << " ";
@@ -129,6 +147,7 @@ void FactorSpread::print_field() {
 		}
 		std::cout << std::endl;
 	}
+	std::cout << std::endl;
 }
 
 
