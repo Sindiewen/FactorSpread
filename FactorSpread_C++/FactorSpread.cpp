@@ -127,9 +127,31 @@ void FactorSpread::spread(int j, int factor)
 }
 
 // Spread recursively 
-void FactorSpread::spreadRecursion(int j, int factor)
+void FactorSpread::spreadRecursion(int i, int j, int factor)
 {
-
+	if (i == 0)
+    {
+        if (field[i][j]%factor == 0)
+        {
+            field[i][j] = 0;
+        }
+    }
+    else
+    {
+        if (field[i][j]%factor == 0)
+        {
+            field[i][j] = 0;
+            if (j-1 >= 0)
+            {
+                spreadRecursion(i-1, j-1, factor);
+            }
+            if (j+1 <= curCols-1)
+            {
+                spreadRecursion(i-1, j+1, factor);
+            }
+            spreadRecursion(i-1, j, factor);
+        }
+    }
 }
 
 /**
