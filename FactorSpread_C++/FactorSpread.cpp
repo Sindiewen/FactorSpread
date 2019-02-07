@@ -97,14 +97,35 @@ void FactorSpread::spread(int j, int factor)
 
 	// Getting the size of the 2d array at index j that we passed in
 	// and then navigating that column to the bottom factoring the numbers
-	for (int i = 0; i < field.size(); i++)
+
+	// We need to check the next row, and see if it's j location has a factor. If it does
+	// then we need to spread diagonally upwards and up to get rid of the numbers divisible by factor
+	for (int i = field.size() - 1; i >= 0; i--)
 	{
-		if (field[i][j] % factor == 0)
+		// If we're at the first line
+		if (i == field.size() - 1 && field[i][j] % factor == 0)
 		{
 			field[i][j] = 0;
 		}
-	}
 
+		// else check the adjacent values
+		else if (i != field.size() - 1) 
+		{
+			// Check 1 before (if legal), the one, and one after (if leagal)
+			if (j - 1 > 0 && field[i][j - 1] % factor == 0)
+			{
+				field[i][j - 1] = 0;
+			}
+			if (field[i][j] % factor == 0)
+			{
+				field[i][j] = 0;
+			}
+			if (j + 1 < field[i].size() - 1 && field[i][j + 1] % factor == 0)
+			{
+				field[i][j + 1] = 0;
+			}
+		}
+	}
 }
 
 /**
