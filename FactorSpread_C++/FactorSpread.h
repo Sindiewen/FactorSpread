@@ -43,7 +43,7 @@ public:
 	// Public Functions
 	bool still_playing();
 	void spread(int j, int factor);
-	void spreadRecursion(int j, int factor);
+	void spreadRecursion(int i, int j, int factor);
 	void check_rows();
 	void print_field();
 
