@@ -28,7 +28,6 @@ FactorSpread::FactorSpread(int rows, int cols, int seed)
 	
 	// Initializes the vectors
 	field.resize(rows, std::vector<int>(cols));
-	broken.resize(rows, std::vector<int>(cols));
 
 	// Initializes the numbers in the 2D vectors
 	for (int i = 0; i < rows; i++)
@@ -36,7 +35,6 @@ FactorSpread::FactorSpread(int rows, int cols, int seed)
 		for (int j = 0; j < cols; j++) 
 		{
 			field[i][j] = getRandomNumber(2, 99);
-			broken[i][j] = 0;
 
 		}
 	}
@@ -126,6 +124,12 @@ void FactorSpread::spread(int j, int factor)
 			}
 		}
 	}
+}
+
+// Spread recursively 
+void FactorSpread::spreadRecursion(int j, int factor)
+{
+
 }
 
 /**

@@ -14,7 +14,6 @@ class FactorSpread
 private:
 	// Creates the vectors for the fields and broken values 
 	std::vector<std::vector<int>> field;
-	std::vector<std::vector<int>> broken;
 	
 	// Default constants
 	static const int ROWS = 6;
@@ -44,6 +43,7 @@ public:
 	// Public Functions
 	bool still_playing();
 	void spread(int j, int factor);
+	void spreadRecursion(int j, int factor);
 	void check_rows();
 	void print_field();
 

@@ -3,7 +3,7 @@
 int main()
 {
 	// Object of the factor
-	FactorSpread myField;
+	FactorSpread myField(6, 5, 32867);
 
 	// print the graph
 	std::cout << "Before: " << std::endl;
