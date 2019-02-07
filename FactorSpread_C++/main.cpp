@@ -14,12 +14,6 @@ int main()
 	myField.spread(2, 2);
 	myField.print_field();
 
-	myField.spread(2, 5);
-	myField.print_field();
-
-	myField.spread(1, 2);
-	myField.print_field();
-
 
 
 	return 0;
