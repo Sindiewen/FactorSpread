@@ -3,7 +3,7 @@
 int main()
 {
 	// Object of the factor
-	FactorSpread myField(6, 5, 32867);
+	FactorSpread myField;
 
 	// print the graph
 	std::cout << "Before: " << std::endl;
@@ -11,7 +11,8 @@ int main()
 
 	// Try factor spread
 	std::cout << "After: " << std::endl;
-	myField.spread(2, 2);
+	//myField.spread(2, 2);
+	myField.spreadRecursion(4, 1, 2);
 	myField.print_field();
 
 
