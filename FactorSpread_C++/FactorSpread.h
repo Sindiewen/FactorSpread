@@ -26,6 +26,13 @@ private:
 	// ---------------------------------------
 	// Private functions
 	int getRandomNumber(int lower, int max);
+	
+	// Recursive SPread Functions
+	void treeSpreadRecursion(int i, int j, int factor);
+	void xSpreadRecursionBL(int i, int j, int factor);
+	void xSpreadRecursionUL(int i, int j, int factor);
+	void xSpreadRecursionBR(int i, int j, int factor);
+	void xSpreadRecursionUR(int i, int j, int factor);
 
 public:
 	// ----------------------------------------------
@@ -42,8 +49,10 @@ public:
 	// ---------------------------------------
 	// Public Functions
 	bool still_playing();
-	void spread(int j, int factor);
-	void spreadRecursion(int i, int j, int factor);
+	void orlandoSpread(int j, int factor);
+	void treeSpread(int j, int factor);
+	void xSpread(int j, int factor);
+
 	void check_rows();
 	void print_field();
 
