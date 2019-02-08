@@ -371,27 +371,10 @@ void FactorSpread::xSpread(int j, int factor)
 /**
 * Checks each row to see if an entire row is eliminated (Broken), if so, delete that row.
 */
-/*
 void FactorSpread::check_rows() 
 {
-	int numZeroes = 0;
-	for (int i = 0; i < field.size(); i++)
-	{
-		for (int j = 0; j < field[i].size(); j++)
-		{
-			if (field[i][j] == 0)
-			{
-				numZeroes++;
-			}
-		}
-		// Checks how many 0's are in the row. If 
-		if (numZeroes == field[i].size())
-		{
-			field[i].erase(field[i].begin(), field[i].size());
-		}
-	}
+
 }
-*/
 
 /**
 * Prints the field to look like this:
