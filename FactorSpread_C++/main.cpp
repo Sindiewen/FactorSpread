@@ -11,8 +11,8 @@ int main()
 
 	// Try factor spread
 	std::cout << "After: " << std::endl;
-	//myField.orlandoSpread(2, 2);
-	//myField.treeSpread(1, 2);
+	myField.orlandoSpread(2, 2);
+	myField.treeSpread(1, 2);
 	myField.xSpread(2, 2);
 
 	myField.print_field();
