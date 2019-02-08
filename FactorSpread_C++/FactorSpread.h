@@ -52,7 +52,6 @@ public:
 	void orlandoSpread(int j, int factor);
 	void treeSpread(int j, int factor);
 	void xSpread(int j, int factor);
-
 	void check_rows();
 	void print_field();
 

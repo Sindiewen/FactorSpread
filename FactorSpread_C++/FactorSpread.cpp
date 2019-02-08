@@ -18,8 +18,16 @@ FactorSpread::FactorSpread(int rows, int cols) : FactorSpread::FactorSpread(rows
 // Constructor - Has everything
 FactorSpread::FactorSpread(int rows, int cols, int seed) 
 {
-	// Initalize random number generator
-	std::srand(seed);
+	if (seed == 0)
+	{
+		// Initalize random number generator
+		std::srand(time(0));
+	}
+	else
+	{
+		std::srand(seed);
+	}
+	
 
 	// Sets the current rows and current cols
 	curRows = rows;
@@ -60,6 +68,8 @@ int FactorSpread::getRandomNumber(int lower, int max)
  * i = curRows - 1
  * j = column to start
  * factor = the factors
+ * 
+ * Created by @Yongxi
  */
 void FactorSpread::treeSpreadRecursion(int i, int j, int factor)
 {
@@ -79,7 +89,7 @@ void FactorSpread::treeSpreadRecursion(int i, int j, int factor)
             {
                 treeSpreadRecursion(i-1, j-1, factor);
             }
-            if (j+1 <= field[i].size()-1)
+            if (j+1 <= field.size()-1)
             {
                 treeSpreadRecursion(i-1, j+1, factor);
             }
@@ -361,10 +371,27 @@ void FactorSpread::xSpread(int j, int factor)
 /**
 * Checks each row to see if an entire row is eliminated (Broken), if so, delete that row.
 */
-void FactorSpread::check_rows() {
-	/* replace the semi colon with your code */
-	;
+/*
+void FactorSpread::check_rows() 
+{
+	int numZeroes = 0;
+	for (int i = 0; i < field.size(); i++)
+	{
+		for (int j = 0; j < field[i].size(); j++)
+		{
+			if (field[i][j] == 0)
+			{
+				numZeroes++;
+			}
+		}
+		// Checks how many 0's are in the row. If 
+		if (numZeroes == field[i].size())
+		{
+			field[i].erase(field[i].begin(), field[i].size());
+		}
+	}
 }
+*/
 
 /**
 * Prints the field to look like this:
@@ -377,15 +404,17 @@ void FactorSpread::check_rows() {
 *
 */
 void FactorSpread::print_field() {
+	/*
 	std::cout << "   ";
 	for (int i = 0; i < field[0].size(); i++)
 	{
 		std::cout << i << "  ";
 	}
+	*/
 	std::cout << '\n';
 	for (int i = 0; i < field.size(); i++)
 	{
-		std:: cout << i << ": ";
+		//std:: cout << i << ": ";
 		for (int j = 0; j < field[i].size(); j++)
 		{
 			if(field[i][j] == 0)
